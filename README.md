@@ -58,3 +58,20 @@ El HTML entero está subido en dicho repositorio.
 
 5\.   
 Finalmente, he imprimido como **“Presupuesto / Pedido”** el pedido que hice anteriormente. Dicho **PDF** está implementado en el repositorio.
+
+
+## FASE 3: EXPORTACIÓN DE LA INFORMACIÓN
+Esta tercera y última fase consiste en extraer los datos de forma limpia, trabajando con procedimientos de extracción de información.
+
+1\.  
+En Odoo, he seguido la siguiente dirección: *Facturación \> Clientes \> **Clientes***
+
+2\.   
+Me he asegurado de que salgan los iconos de rayitas horizontales y he marcado a todos los clientes.  
+<img width="745" height="602" alt="image" src="https://github.com/user-attachments/assets/500eb783-a71e-464c-ad5d-795167504903" />
+
+3\.   
+Al seleccionar todos los clientes, he entrado en “**Acciones”** y he seleccionado **exportar**. Luego, he elegido el tipo de exportación **"Exportar datos compatibles con importación”**, el formato **“CSV”** y las columnas de los datos de los clientes, como son el **nombre**, el **correo electrónico**, **teléfono**, **país y actividades**. 
+<img width="643" height="883" alt="image" src="https://github.com/user-attachments/assets/d7d4034b-41d1-4f09-bbe9-eb3ee980b4ee" />
+
+4\. Una vez exportado el archivo, lo he abierto en Visual Studio COde y he verificado que la codificación es UTF-8, que los datos están delimitados por comillas dobles y perfectamente separados por comas. Dicho archivo CSV está implementado en el repositorio.
