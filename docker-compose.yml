@@ -1,0 +1,35 @@
+services: 
+
+  odoo: 
+    image: odoo:latest
+    container_name: odoo
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8200:8069"
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=db
+      - USER=pablo-marquez
+      - PASSWORD=123456
+    command: odoo -d odoo --db_user=pablo-marquez --db_password=123456 -i base
+
+  db: 
+    image: postgres:16.0
+    container_name: db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=odoo
+      - POSTGRES_USER=pablo-marquez
+      - POSTGRES_PASSWORD=123456
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    
+volumes:
+  odoo-data:
+  db-data:
